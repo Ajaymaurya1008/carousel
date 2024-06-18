@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carousel with Tailwind CSS</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @keyframes carousel-animation {
+
+            0%,
+            100% {
+                transform: translateX(0);
+            }
+
+            33% {
+                transform: translateX(-100%);
+            }
+
+            66% {
+                transform: translateX(-200%);
+            }
+        }
+    </style>
+</head>
+
+<body class="flex items-center justify-center h-screen bg-gray-200">
+    <div class="relative w-full h-full overflow-hidden">
+        <div class="absolute w-full h-full flex animate-[carousel-animation_15s_infinite]">
+            <div class="w-full h-full flex-shrink-0 bg-blue-500">Background 1</div>
+            <div class="w-full h-full flex-shrink-0 bg-green-500">Background 2</div>
+            <div class="w-full h-full flex-shrink-0 bg-red-500">Background 3</div>
+        </div>
+        <div class="absolute inset-0 flex items-center justify-center z-10">
+            <img src="https://via.placeholder.com/150" alt="Person" class="rounded-full">
+        </div>
+        <div class="absolute w-full h-full flex animate-[carousel-animation_15s_infinite] z-20">
+            <div class="w-full h-full flex-shrink-0 flex items-center justify-center text-white text-4xl">Text 1</div>
+            <div class="w-full h-full flex-shrink-0 flex items-center justify-center text-white text-4xl">Text 2</div>
+            <div class="w-full h-full flex-shrink-0 flex items-center justify-center text-white text-4xl">Text 3</div>
+        </div>
+    </div>
+</body>
+
+</html>
